@@ -1,40 +1,65 @@
+<!-- PADRÃO DE ENTRADA HTML-->
 <!DOCTYPE html>
 <html lang="en">
+<!--------------------------------------------- HEAD------------------------------------------------------------>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- REFERÊNCIAS P/ O ARQUIVO DE CSS E O ARQUIVO DE JAVASCRIPT -->
     <link rel="stylesheet" href="style.css">
     <script src="falemais.js"></script>
 
     <title>Fale Mais com os novos planos da Telzir.</title>
 </head>
+
+<!--------------------------------------------- BODY------------------------------------------------------------>
 <body>
+
+    <!--Esse div representa a onda animada que aparece na tela e conta com duas classes css: wave e branco-->
     <div class="wave branco"></div>
+
+    <!--Esse div representa aquele container geral onde colocarei os componentes do site. Conta com a classe 
+    css container-->
     <div class="container">
+
+        <!----------------HEADER--------------------->
         <header>
-            <!--Imagem de Logo-->
+
+            <!--Imagem de logo com o nome Telzir-->
             <img src="images/LogotipoEmpresa.png" alt="Logotipo Empresa Telzir">
+
         </header>
 
+        <!----------------NAV--------------------->
         <nav>
+
+            <!--Links de navegação do site-->
             <a href="index.html">INÍCIO</a>
             <a href="#">PLANOS</a>
             <a href="#">QUEM SOMOS</a>
             <a href="#">CONTATO</a>
+
         </nav>
 
+        <!----------------MAIN--------------------->
         <main>
 
-            <!--Texto de apresentação FaleMais-->
+            <!--Título Fale+-->
             <h1 class="titulo textoGradiente tituloSimular">FALE +</h1>
 
+            <!--Texto de apresentação FaleMais-->
             <p class="texto textoSimular">Apenas aqui na Telzir você pode comparar os valores <br>de uma ligação com e sem
                 um de nossos planos! <br>Aproveite e insira abaixo as informações para a sua simulação:
             </p>
 
-
+            <!----------LABELS---------->
             <div>
+
+                <!--Para alinhar corretamente as labels coloquei cada uma delas dentro de um div
+                com as configurações da classe labels-->
+
                 <div class ="labels">
                     <label class= "texto textoSimular label">DDD de Origem </label>
                 </div>
@@ -50,60 +75,68 @@
                 <div class ="labels">
                     <label class= "texto textoSimular label">Tempo </label>
                 </div>
+
             </div>
 
+            <!----------INPUTS/SELECT BOXES---------->
 
+            <!--Aqui criei uma classe geral como container para colocar as caixas de seleção e input dentro, dessa
+            maneira poderia alinhar corretamente.-->
             <div class ="inputContainer">
-                <div id="dddOrigem">
-                    <select>
+                
+                <!-- Esses selects possuem um id de identificação para que seja referido no código JS-->
+                <div>
+                    <select id="dddOrigem" onchange ="ddd.GerarDDD(this.value); return false">
                         <option value="0"></option>
                         <option value="1">011</option>
                         <option value="2">016</option>
-                        <option value="3">011</option>
-                        <option value="4">017</option>
-                        <option value="5">011</option>
-                        <option value="6">018</option>
+                        <option value="3">017</option>
+                        <option value="4">018</option>
                     </select>
                 </div>
     
-                <div id="dddDestino">
-                    <select>
-                        <option value="0"></option>
-                        <option value="1">011</option>
-                        <option value="2">016</option>
-                        <option value="3">011</option>
-                        <option value="4">017</option>
-                        <option value="5">011</option>
-                        <option value="6">018</option>
+                <div>
+                    <select id="dddDestino">
+                        <option id = "opt0" value="0">Escolha um DDD de Origem</option>
+                        <option id = "opt1" value="1">Escolha um DDD de Origem</option>
+                        <option id = "opt2" value="2">Escolha um DDD de Origem</option>
+                        <option id = "opt3" value="3">Escolha um DDD de Origem</option>
                     </select>
                 </div>
 
-                <div id="plano">
-                    <select>
+                <div>
+                    <select id="plano">
                         <option value="0"></option>
                         <option value="1">FaleMais 30</option>
                         <option value="2">FaleMais 60</option>
                         <option value="3">FaleMais 120</option>
                     </select>
                 </div>
-    
+                
+                <!--O tempo em especial é inserido manualmente pelo usuário, logo se trata de um input.-->
                 <div class ="input">
-                    <input type="text" id="tempo">
+                    <input type="number" id="tempo">
                 </div>
+
             </div>
 
+            <!----------BOTÃO SIMULAR---------->
 
-
+            <!-- Ao contrário do botão simular do index que leva para a página de simulação, esse botão fará a 
+            função de cálculo e mostrará o resultado nos cards, por isso colocamos a função simular nele e 
+            colocamos o return como false, dessa maneira o navegador não requisita novas atualizações sumindo
+            com os resultados em segundos. O resultado é mantido ali até o usuário sair da página, fechar o site ou
+            realizar uma nova simulação.-->
             <div class="centralizado">
-                <a onclick ="Simular(); return false" href="" class="btn btnSimular botaoSimularNovaPos" id="botaoSimular">SIMULAR</a>
+                <a onclick ="Simular(event)" href="" class="btn btnSimular botaoSimularNovaPos" id="botaoSimular">SIMULAR</a>
             </div>
 
-
+            <!----------CARDS DE RESULTADO---------->
             <div>
                 <div class="card">
                     <h1 class ="planos textoGradiente faleM">FALE+</h1>
                     <ul>
-                        <li id="complano" class="price bottom-bar">&dollar;0.00</li>
+                        <li id="complano" class="price bottom-bar">R$ 0.00</li>
                         <li class="textoM bottom-bar">X min gratuítos</li>
                         <li class="textoM textoSimular bottom-bar">Economia de X%</li>
                         <li class="textoM textoSimular bottom-bar">Sem fidelidade</li>
@@ -113,7 +146,7 @@
                 <div class="card card2">
                     <h1 class ="planos textoGradiente faleM">COMUM</h1>
                     <ul>
-                        <li id="semplano" class="price bottom-bar">&dollar;0.00</li>
+                        <li id="semplano" class="price bottom-bar">R$ 0.00</li>
                         <li class="textoM bottom-bar">Taxas altíssimas</li>
                         <li class="textoM bottom-bar">Zero flexibilidade</li>
                         <li class="textoM bottom-bar">Sem minutos gratuítos</li>
@@ -122,10 +155,6 @@
             </div>
 
         </main>
-
-        <footer>
-
-        </footer>
     </div>
     </div>
 </body>

@@ -1,83 +1,119 @@
-html{
-    height: 100%;
-}
+/*----------------------------------------------- INDEX -----------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
 
+/*--------------------------------- ELEMENTOS ESTRUTURAIS----------------------------------------------*/
 body {
+    /*Adicionando o fundo gradiente e a imagem que gera o padrão de "+" ao fundo.*/
     background: url(images/PadraoFundo.png), linear-gradient(90deg, #B993D6 0%, #8CA6DB 100%);
 }
 
-.container{
+.container{ /*Serve como uma "caixa" que limita o espaço onde desejo encaixar meus elementos.*/
+    
+    /*O container precisa ter um tamanho (altura ou largura) para existir e nesse caso usei 1024.*/
+    width: 1024px;
+
+    /*O navegador calcula as margens direita e esquerda, centralizando o container horizontalmente.*/
     margin-left: auto;
     margin-right: auto;
-    width: 1024px;
+
 }
 
-header{
+/*--------------------------------- ELEMENTOS SEMÂNTICOS----------------------------------------------*/
+header{ /*Container superior para elementos introdutórios do site*/
+    
     height: 118px;
+
+    /*Centralizando todo o conteúdo que virá dentro do header.*/
     text-align: center;
+
 }
 
-nav{
-    border-radius: 25px;
+nav{ /*Container para links de navegação (Início, contato, quem somos etc).*/
+
+    /*Cor de fundo do container com um pouco de transparência [0.267])*/
     background-color: rgba(255, 255, 255, 0.267);
+
+    /*Arredondando as bordas*/
+    border-radius: 25px;
+
+    /*Centralizando todo o conteúdo que virá dentro do nav.*/
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+
+    /*A Margin cuida do espaçamento entre as bordas do item e os elementos externos.*/
+    /*O Padding cuida do espaçamento entre as bordas do item e seus elementos internos.*/
+
+    padding-top: 15px; /*Espaço de 15px entre o conteúdo e a extremidade superior do nav*/
+    padding-bottom: 15px; /*Espaço de 15px entre o conteúdo e a extremidade inferior do nav*/
 }
 
-nav a{
-    text-decoration: none;
+nav a{ /*Definindo a aparência das tags "a" (que são os links de navegação) dentro do nav*/
+
+    text-decoration: none; 
     font-size: 15px;
     font-family: Arial;
     color: white;
     padding-left: 40px;
     padding-right: 40px;
+
 }
 
 
-main{
+main{ /*É o container que cuida do conteúdo do site*/
+
     height: 400px;
     text-align: center;
     padding-top: 40px;
     padding-left: 240px;
     padding-right: 240px;
+
 }
 
-.textoGradiente {
-    background-color: #ffff;
+/*--------------------------------- APARÊNCIA DOS TEXTOS----------------------------------------------*/
+
+.textoGradiente { /*Cria um gradiente e o confina à um corpo de texto*/
+
+    /*Criando o gradiente*/
     background-image: linear-gradient(45deg, rgb(184, 175, 236), #fff);
-    background-size: 100%;
+    background-size: 100%; /*Esse 100% significa que o tamanho do background ocupará 100% de seu elemento pai.*/
+
+    /*Clipa/Limita o conteúdo ao texto que estiver recebendo essa classe*/
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent
 }
 
-.titulo{
+.titulo{ /*Aparência base dp título Fale+*/
     font-size: 100px;
     font-family: Impact;
 }
 
-.novaPosicaoMais1{
-    font-size: 50px;
-    margin-top: -130px;
-    margin-left: 140px;
-    margin-bottom: 80px;
-}
-
-.novaPosicaoMais2{
-    font-size: 50px;
-    margin-top: -200px;
-    margin-left: 240px;
-    margin-bottom: 110px;
-}
-
-.texto{
+.texto{ /*Aparência do texto que complementa o título Fale+*/
     font-size: 20px;
     color: white;
     font-family: Century Gothic;
     margin-top: -50px;
 
 }
+
+/*----------------------------- APARÊNCIA ELEMENTOS ADICIONAIS AO TÍTULO --------------------------------*/
+
+.novaPosicaoMais1{ /*O título Fale+ contém dois "+" extras, essa classe cuida da posição e taamanho do "+" inferior.*/
+   
+    font-size: 50px;
+
+    margin-top: -130px;
+    margin-left: 140px;
+    margin-bottom: 80px;
+}
+
+.novaPosicaoMais2{ /*O título Fale+ contém dois "+" extras, essa classe cuida da posição e tamanho do "+" inferior.*/
+    font-size: 50px;
+    margin-top: -200px;
+    margin-left: 240px;
+    margin-bottom: 110px;
+}
+
+/*------------------------------- APARÊNCIA DO BOTÃO DE SIMULAR ----------------------------------------*/
 
 .centralizado{
     position: absolute;
@@ -121,11 +157,9 @@ main{
     width:100%;
 }
 
-footer{
-    height: 100px;
-}
+/*---------------------------APARÊNCIA E ANIMAÇÃO DA ONDA INFERIOR -----------------------------------*/
   
-  .wave {
+.wave{
     background: url(images/ondas.svg) repeat-x; 
     position: fixed;
     margin-top: 500px;
@@ -133,36 +167,39 @@ footer{
     height: 198px;
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
     transform: translate3d(0, 0, 0);
-  }
+}
   
-  .wave:nth-of-type(2) {
+.wave:nth-of-type(2) {
     animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
     opacity: 1;
-  }
+}
   
-  @keyframes wave {
+@keyframes wave {
     0% {
       margin-left: 0;
     }
     100% {
       margin-left: -1600px;
     }
-  }
+}
   
-  @keyframes swell {
+@keyframes swell {
     0%, 100% {
       transform: translate3d(0,-25px,0);
     }
     50% {
       transform: translate3d(0,5px,0);
     }
-  }
+}
 
-  .branco{
+.branco{
     filter: brightness(0) invert(1);    
 }
 
-/*--------------------------------------- PÁGINA DE SIMULAÇÃO ----------------------------------------*/
+/*------------------------------------------- PAG SIMULAR ---------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------- APARÊNCIA DOS TEXTOS ----------------------------------------*/
 
 .tituloSimular{
     margin-top: -40px;
@@ -183,12 +220,14 @@ footer{
     margin-bottom: 10px;
 }
 
+/*--------------------------------------- APARÊNCIA DAS CAIXAS DE INPUT ----------------------------------------*/
+
 .inputContainer{
     margin-top: -115px;
     margin-left: -400px;
 }
 
-.input [type="text"], select{
+.input [type="number"], select{
     position: relative;
     width: 150px;
     margin-left: -150px;
@@ -197,16 +236,18 @@ footer{
     background: transparent;
     border: 1px solid #fff;
 
-    color: #fff;
+    color: rgb(111, 46, 141);
 
     outline: none;
 }
+
+/*--------------------------------------- BOTÃO SIMULAR ----------------------------------------*/
 
 .botaoSimularNovaPos{
     margin-left: -300px;
 }
 
-/*---------------------- RESULTADOS ----------------------------*/
+/*--------------------------------------- CARDS DE RESULTADO ----------------------------------------*/
 
   
 .card {
@@ -249,29 +290,26 @@ ul {
     align-items: center;
     justify-content: space-around;
     margin-top: -50px;
-  }
-  ul li {
+}
+
+ul li {
     list-style-type: none;
     display: flex;
     width: 100%;
     padding: 1rem 0;
     margin-top: -5px;
     justify-content: center;
-  }
-  ul li.price {
+}
+
+ul li.price {
     font-size: 2rem;
     font-family: Century Gothic;
     font-style: bold;
     color: hsl(0, 0%, 100%);
     padding-bottom: 1rem;
-  }
+}
 
-  .bottom-bar {
+.bottom-bar {
     margin-left: -40px;
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
-  }
-
-  /*---------------------- DROPDOWN BOX --------------------------*/
-  option{
-      color:rgb(119, 104, 202)
-  }
+}

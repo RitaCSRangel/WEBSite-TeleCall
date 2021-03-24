@@ -1,48 +1,67 @@
+<!-- PADRÃO DE ENTRADA HTML-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
+<!--------------------------------------------- HEAD------------------------------------------------------------>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+
+    <!-- REFERÊNCIAS P/ O ARQUIVO DE CSS E O ARQUIVO DE JAVASCRIPT -->
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="falemais.js"></script>
 
     <title>Fale Mais com os novos planos da Telzir.</title>
 </head>
+
+<!--------------------------------------------- BODY------------------------------------------------------------>
 <body>
+    <!--Esse div representa a onda animada que aparece na tela e conta com duas classes css: wave e branco-->
     <div class="wave branco"></div>
+
+    <!--Esse div representa aquele container geral onde colocarei os componentes do site. Conta com a classe 
+    css container-->
     <div class="container">
-        <header>
-            <!--Imagem de Logo-->
-            <img src="images/LogotipoEmpresa.png" alt="Logotipo Empresa Telzir">
-        </header>
 
-        <nav>
-            <a href="#">INÍCIO</a>
-            <a href="#">PlANOS</a>
-            <a href="#">QUEM SOMOS</a>
-            <a href="#">CONTATO</a>
-        </nav>
+              <!----------------HEADER--------------------->
+              <header>
 
+                <!--Imagem de logo com o nome Telzir-->
+                <img src="images/LogotipoEmpresa.png" alt="Logotipo Empresa Telzir">
+    
+            </header>
+    
+            <!----------------NAV--------------------->
+            <nav>
+    
+                <!--Links de navegação do site-->
+                <a href="index.html">INÍCIO</a>
+                <a href="#">PLANOS</a>
+                <a href="#">QUEM SOMOS</a>
+                <a href="#">CONTATO</a>
+    
+            </nav>
+
+        <!----------------MAIN--------------------->
         <main>
 
-            <!--Texto de apresentação FaleMais-->
+            <!--Título Fale+-->
             <h1 class="titulo textoGradiente">FALE +</h1>
+            <!--Componente "+" superior que acompanha o título-->
             <h1 class="titulo textoGradiente novaPosicaoMais1">+</h1>
+            <!--Componente "+" inferior que acompanha o título-->
             <h1 class="titulo textoGradiente novaPosicaoMais2">+</h1>
 
+            <!--Texto de apresentação FaleMais-->
             <p class="texto">Fale gratuitamente nos primeiros minutos de suas ligações interurbanas com os novos
                 planos da Telzir. Quer ver como funciona? Faça uma simulação!</p>
-
+            
+            <!--Botão Simular que leva para a página de simulação-->
             <div class="centralizado">
                 <a href="simular.html" class="btn btnSimular">SIMULAR</a>
             </div>
 
         </main>
-
-        <footer>
-
-        </footer>
     </div>
     </div>
 </body>
