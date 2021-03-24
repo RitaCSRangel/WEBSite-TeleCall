@@ -1,0 +1,23 @@
+{
+  "name": "falemais",
+  "version": "1.0.0",
+  "description": "Desafio proposto pela LolDesign para o processo seletivo de Junior Full-Stack 2021.",
+  "main": "falemais.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RitaCSRangel/FaleMais.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RitaCSRangel/FaleMais/issues"
+  },
+  "homepage": "https://github.com/RitaCSRangel/FaleMais#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}

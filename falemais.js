@@ -219,25 +219,37 @@ function Simular(event){
   var minutosGratis = ddd.DefinirPlano();
   var tempoComPlano = ddd.tempo - minutosGratis;
   var tarifa = ddd.GerarTarifa(ddd.origem, ddd.destino);
-  
-  var novaTarifa = tarifa + (tarifa  * 0.1);
-  var valorSemPlano;
-  var valorComPlano;
 
   /*Se o tempo restante de ligação for 0 ou menor mostrar que com o plano a ligação sai de graça + o preço de 
   uma ligação comum*/
   if (tempoComPlano <= 0){
-    valorSemPlano = ddd.tempo * tarifa;
+    var valorSemPlano = CalculoDePrecoSemPlano(tarifa, ddd.tempo);
 
     document.getElementById("complano").innerHTML = "GRÁTIS";
     document.getElementById("semplano").innerHTML ="R$"+ parseFloat(valorSemPlano).toFixed(2);
 
   }else{ /*Do contrário mostrar os dois preços*/
-    valorComPlano = tempoComPlano * novaTarifa;
-    valorSemPlano = ddd.tempo * tarifa;
+    var valorComPlano = CalculoDePrecoComPlano(tarifa, tempoComPlano);
+    var valorSemPlano = CalculoDePrecoSemPlano(tarifa, ddd.tempo);
 
     document.getElementById("complano").innerHTML = "R$"+ parseFloat(valorComPlano).toFixed(2);
     document.getElementById("semplano").innerHTML ="R$"+ parseFloat(valorSemPlano).toFixed(2);
   }
-  
 }
+
+/*------------------------------------- FUNÇÕES DE CALCULO DE PREÇO ------------------------------------------*/
+function CalculoDePrecoComPlano(tarifa, tempo){
+  var novaTarifa = tarifa + (tarifa  * 0.1);
+  return (tempo * novaTarifa);
+}
+
+function CalculoDePrecoSemPlano(tarifa, tempo){
+  return (tempo * tarifa);
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
+  /* ------------------------------------- EXPORTS PARA TESTES ------------------------------------------------ */
+  module.exports = { 
+    CalculoDePrecoSemPlano: CalculoDePrecoSemPlano, 
+    CalculoDePrecoComPlano: CalculoDePrecoComPlano
+  } 
