@@ -3,6 +3,8 @@
 
 /*--------------------------------- ELEMENTOS ESTRUTURAIS----------------------------------------------*/
 body {
+
+    display: flex;
     /*Adicionando o fundo gradiente e a imagem que gera o padrão de "+" ao fundo.*/
     background: url(images/PadraoFundo.png), linear-gradient(90deg, #B993D6 0%, #8CA6DB 100%);
 }
