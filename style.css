@@ -84,34 +84,36 @@ main{ /*É o container que cuida do conteúdo do site*/
     -webkit-text-fill-color: transparent
 }
 
-.titulo{ /*Aparência base dp título Fale+*/
+.titulo{ /*Aparência base do título*/
     font-size: 100px;
     font-family: Impact;
+    margin-left: -20px;
 }
 
-.texto{ /*Aparência do texto que complementa o título Fale+*/
+.texto{ /*Aparência do texto que complementa o título*/
     font-size: 20px;
     color: white;
     font-family: Century Gothic;
     margin-top: -50px;
+    margin-left: -20px;
 
 }
 
 /*----------------------------- APARÊNCIA ELEMENTOS ADICIONAIS AO TÍTULO --------------------------------*/
 
-.novaPosicaoMais1{ /*O título Fale+ contém dois "+" extras, essa classe cuida da posição e taamanho do "+" inferior.*/
+.novaPosicaoMais1{ /*O título contém dois "+" extras, essa classe cuida da posição e taamanho do "+" inferior.*/
    
     font-size: 50px;
 
     margin-top: -130px;
-    margin-left: 140px;
+    margin-left: 290px;
     margin-bottom: 80px;
 }
 
-.novaPosicaoMais2{ /*O título Fale+ contém dois "+" extras, essa classe cuida da posição e tamanho do "+" inferior.*/
+.novaPosicaoMais2{ /*O título contém dois "+" extras, essa classe cuida da posição e tamanho do "+" inferior.*/
     font-size: 50px;
     margin-top: -200px;
-    margin-left: 240px;
+    margin-left: 390px;
     margin-bottom: 110px;
 }
 

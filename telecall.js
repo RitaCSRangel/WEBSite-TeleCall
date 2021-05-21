@@ -210,7 +210,7 @@ function Simular(event){
       throw "Erro 1";
     }
   } catch(e){
-    alert("Escolha um plano Fale+ para prosseguir com a simulação.");
+    alert("Escolha um plano para prosseguir com a simulação.");
     return 0;
   }
 
